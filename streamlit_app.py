@@ -109,6 +109,6 @@ if uploaded_file is not None:
 
 # --- Footer ---
 st.markdown("---")
-st.markdown("Made with ❤️ by Abdelbasset Moujtahid \& Othmane Elmakouki")
+st.markdown("Made with ❤️ by Abdelbasset Moujtahid \& Othmane Elmekaoui")
 st.markdown("Source code: [GitHub](https://github.com/moujtahid21/KIMBA/tree/master)")
 # --- End of Streamlit App ---
