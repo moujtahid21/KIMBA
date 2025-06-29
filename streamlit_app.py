@@ -15,7 +15,6 @@ logger = logging.getLogger(__name__)
 @st.cache_resource
 def ensure_models_downloaded():
     try:
-        # Appel du script Python pour télécharger les modèles
         import subprocess
         import sys
         subprocess.check_call([sys.executable, "download_models.py"])
@@ -29,20 +28,19 @@ def ensure_models_downloaded():
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 logger.info(f"Using device: {device}")
 
+# --- Ensure models are downloaded BEFORE loading ---
+ensure_models_downloaded()
+
 # --- Model Loader ---
 @st.cache_resource
 def load_kimba_model():
     try:
         model = KIMBAEnsemble()
-        # The file path is hardcoded. Make sure it is correct.
         model_dir_path = "/workspaces/KIMBA/saved_models"
-        
-        # This is where the error was happening
         if not os.path.exists(model_dir_path):
             logger.error(f"Directory not found: {model_dir_path}")
             st.error(f"Directory not found: {model_dir_path}")
             return None
-        
         model.load_saved_models(model_dir_path)
         model.to(device)
         model.eval()
