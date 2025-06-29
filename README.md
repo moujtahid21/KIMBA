@@ -1,45 +1,78 @@
 # Advanced Tumor Recognition and Prediction in Medical Imaging
 
-A sophisticated deep learning system for detecting tumor types in IRMs using a VGG19-ResNet50 Architecture.
+-----
 
-## 🎯 Overview
-This project implements a state-of-the-art tumor detection system designed for IRM scans of lung and breast tumors. The model combines the power of a pre-trained very large CNN (VGG19) and a Deep Residual-Learning framework (ResNet50) to achieve high accuracy in identifying benign, malignant tumor types.
+🎯 **Overview**
 
-## Key Features
-- **Domain specific**: Uses very large CNNs and Deep Learning models specifically trained on all sorts of images
-- **Hybrid Architecture**: Combines CNN and Residual Deep Learning model for ...
-- **Multiscale Feature Extraction**: Uses multiple layers composed of different kernel sizes to capture different patterns.
-- **Production Ready**: Complete training pipeline with evaluation metrics and visualization
+This project introduces a sophisticated deep learning system for **detecting and classifying tumor types in Medical Resonance Imaging (MRI) scans**. Our model utilizes a powerful **VGG19-ResNet50 hybrid architecture** to accurately identify benign and malignant tumors, with a primary focus on lung and breast cancers.
 
-## 🏗️ Architecture 
+-----
+
+✨ **Key Features**
+
+  * **Domain-Specific Excellence**: Built upon advanced Convolutional Neural Networks (CNNs) and deep learning models, our system is meticulously tuned for precise medical image analysis.
+  * **Hybrid Architecture**: We've combined the robust feature extraction capabilities of **VGG19** with the deep residual learning of **ResNet50**. This fusion enables enhanced pattern recognition and superior classification performance.
+  * **Multi-Scale Feature Extraction**: The architecture integrates multiple convolutional layers with varying kernel sizes, allowing the capture of diverse patterns and details at different scales within MRI scans.
+  * **Production-Ready Pipeline**: The system includes a comprehensive training pipeline, complete with evaluation metrics and visualization tools, making it ready for real-world application.
+
+-----
+
+🏗️ **Architecture**
+
+Our streamlined architecture processes input images through a series of advanced components:
+
 ```
-Input image --> Transformers --> Multi-Scale VGG19 + ResNet50 --> Malignan / Benign / Normal
+Input MRI Scan
+      ↓
+Transformers (for preprocessing)
+      ↓
+Multi-Scale VGG19 + ResNet50 (for feature extraction and classification)
+      ↓
+Malignant / Benign / Normal Classification
 ```
 
-### Model components
+-----
 
-## 📊 Dataset
-The model is trained on the **Lung cancer, breast cancer and brain tumor datasets** which contains:
-- IRM scans of different patient's breast, lungs and brains.
-- Multi-class labels for lung and cancer data (benign, malignant and normal) and binary labels for brain data (yes, no)
+📊 **Dataset**
 
-### Data split
-**Training**: 80%, **Test**: 10% and **Validation**: 10%.
+The model is rigorously trained on a diverse collection of **Lung, Breast, and Brain Tumor datasets**, comprising:
 
-## 🚀 Quick start
+  * MRI scans from a variety of patients' breasts, lungs, and brains.
+  * **Multi-class labels** for lung and breast cancer data (distinguishing between benign, malignant, and normal cases).
+  * **Binary labels** for brain tumor data (indicating the presence or absence of a tumor).
+
+**Data Split**:
+
+To ensure robust training and evaluation, the dataset is strategically split as follows:
+
+  * **Training**: 80%
+  * **Test**: 10%
+  * **Validation**: 10%
+
+-----
+
+🚀 **Quick Start**
+
+Get started with our tumor detection system in just a few steps:
+
 ### Prerequisites
+
+First, install the necessary dependencies:
+
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
-Download the models from Google Drive
+
+Then, download the pre-trained models:
+
 ```bash
 python download_models.py
 ```
 
-### Basic usage
-Run the app with:
+### Basic Usage
+
+Run the Streamlit application to interact with the system:
+
 ```bash
 streamlit run streamlit_app.py
 ```
-
-
