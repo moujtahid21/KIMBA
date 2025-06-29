@@ -19,6 +19,14 @@ def ensure_models_downloaded():
         import sys
         subprocess.check_call([sys.executable, "download_models.py"])
         logger.info("✅ Models downloaded successfully!")
+        # Déplacement des fichiers si besoin
+        import shutil
+        os.makedirs("saved_models", exist_ok=True)
+        for fname in ["best_vgg_model.pth", "best_resnet50_model_3_classes_combined.pth"]:
+            src = os.path.join(os.path.dirname(__file__), fname)
+            dst = os.path.join(os.path.dirname(__file__), "saved_models", fname)
+            if os.path.exists(src) and not os.path.exists(dst):
+                shutil.move(src, dst)
     except Exception as e:
         logger.error("Failed to download models. Here is the full traceback:")
         logger.error(traceback.format_exc())
