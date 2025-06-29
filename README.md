@@ -27,6 +27,19 @@ The model is trained on the **Lung cancer, breast cancer and brain tumor dataset
 **Training**: 80%, **Test**: 10% and **Validation**: 10%.
 
 ## 🚀 Quick start
+### Prerequisites
 ```bash
-pip install requirement.txt
+pip install -r requirement.txt
 ```
+Download the models from Google Drive
+```bash
+python download_models.py
+```
+
+### Basic usage
+Run the app with:
+```bash
+streamlit run streamlit_app.py
+```
+
+
