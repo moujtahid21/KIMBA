@@ -21,7 +21,7 @@ def load_kimba_model():
     try:
         model = KIMBAEnsemble()
         # The file path is hardcoded. Make sure it is correct.
-        model_dir_path = "/workspaces/kimba-tumor-detection/saved_models"
+        model_dir_path = "/workspaces/KIMBA/saved_models"
         
         # This is where the error was happening
         if not os.path.exists(model_dir_path):
@@ -110,5 +110,5 @@ if uploaded_file is not None:
 # --- Footer ---
 st.markdown("---")
 st.markdown("Made with ❤️ by Abdelbasset Moujtahid \& Othmane Elmakouki")
-st.markdown("Source code: [GitHub](https://github.com/moujtahid21/kimba-tumor-detection/tree/main)")
+st.markdown("Source code: [GitHub](https://github.com/moujtahid21/KIMBA/tree/master)")
 # --- End of Streamlit App ---
