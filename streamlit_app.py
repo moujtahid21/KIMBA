@@ -5,7 +5,7 @@ from PIL import Image
 import logging
 import os # <-- Add this line
 import traceback # <-- Keep this for now for better debugging
-from src.models.kimba_ensemble import KIMBAEnsemble
+from kimba_ensemble import KIMBAEnsemble
 
 # --- Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
