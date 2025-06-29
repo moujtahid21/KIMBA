@@ -16,7 +16,10 @@ logger = logging.getLogger(__name__)
 @st.cache_resource
 def ensure_models_downloaded():
     try:
-        download_models()
+        # Appel du script Python pour télécharger les modèles
+        import subprocess
+        import sys
+        subprocess.check_call([sys.executable, "download_models.py"])
         logger.info("✅ Models downloaded successfully!")
     except Exception as e:
         logger.error("Failed to download models. Here is the full traceback:")
