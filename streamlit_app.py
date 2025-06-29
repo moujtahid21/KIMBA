@@ -3,8 +3,8 @@ import torch
 import numpy as np
 from PIL import Image
 import logging
-import os # <-- Add this line
-import traceback # <-- Keep this for now for better debugging
+import os
+import traceback
 from kimba_ensemble import KIMBAEnsemble
 
 # --- Logging ---
