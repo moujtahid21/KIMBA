@@ -6,10 +6,22 @@ import numpy as np
 from PIL import Image
 import traceback
 from kimba_ensemble import KIMBAEnsemble
+from download_models import download_models
 
 # --- Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# --- Download models ---
+@st.cache_resource
+def ensure_models_downloaded():
+    try:
+        download_models()
+        logger.info("✅ Models downloaded successfully!")
+    except Exception as e:
+        logger.error("Failed to download models. Here is the full traceback:")
+        logger.error(traceback.format_exc())
+        st.error(f"Failed to download models: {e}")
 
 # --- Device ---
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
