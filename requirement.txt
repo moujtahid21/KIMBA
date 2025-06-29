@@ -1,0 +1,8 @@
+streamlit
+torch
+pillow
+torchvision
+scikit-learn
+matplotlib
+tensorflow
+gdown
