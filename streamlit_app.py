@@ -6,7 +6,6 @@ import numpy as np
 from PIL import Image
 import traceback
 from kimba_ensemble import KIMBAEnsemble
-import download_models
 
 # --- Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
